@@ -4,15 +4,12 @@ module.exports = input => {
     .split('')
     .map(Number)
     .reduce((accumulator, current, index, original) => {
-      const prev = original[index - 1]
+      const indexToCompare =
+        index + original.length / 2 < original.length
+          ? index + original.length / 2
+          : (index + original.length / 2) % original.length
 
-      if (index === 0) {
-        if (current === original[original.length - 1]) {
-          accumulator = accumulator + current
-        }
-      }
-
-      if (prev === current) {
+      if (current === original[indexToCompare]) {
         accumulator = accumulator + current
       }
 
