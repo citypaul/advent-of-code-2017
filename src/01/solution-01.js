@@ -1,5 +1,5 @@
-module.exports = input => {
-  return input
+module.exports = input =>
+  input
     .toString(10)
     .split('')
     .map(Number)
@@ -8,14 +8,13 @@ module.exports = input => {
 
       if (index === 0) {
         if (current === original[original.length - 1]) {
-          accumulator = accumulator + current
+          accumulator += current
         }
       }
 
       if (prev === current) {
-        accumulator = accumulator + current
+        accumulator += current
       }
 
       return accumulator
     }, 0)
-}
