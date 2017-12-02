@@ -6,10 +6,8 @@ module.exports = input =>
     .reduce((accumulator, current, index, original) => {
       const prev = original[index - 1]
 
-      if (index === 0) {
-        if (current === original[original.length - 1]) {
-          accumulator += current
-        }
+      if (index === 0 && current === original[original.length - 1]) {
+        accumulator += current
       }
 
       if (prev === current) {

@@ -1,5 +1,5 @@
-module.exports = input => {
-  return input
+module.exports = input =>
+  input
     .toString(10)
     .split('')
     .map(Number)
@@ -10,9 +10,8 @@ module.exports = input => {
           : (index + original.length / 2) % original.length
 
       if (current === original[indexToCompare]) {
-        accumulator = accumulator + current
+        accumulator += current
       }
 
       return accumulator
     }, 0)
-}
